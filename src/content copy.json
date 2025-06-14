@@ -1,0 +1,472 @@
+{
+  "about": {
+    "board": {
+      "parents": [
+        {
+          "department": "Debate",
+          "imageSrc": "/placeholder.svg",
+          "name": " Veena Devarakonda",
+          "position": "Parent Advisor"
+        }
+      ],
+      "students": [
+        {
+          "department": "Public Forum",
+          "imageSrc": "https://res.cloudinary.com/dokhmjxnx/image/upload/v1736655460/uhmkhstcq4unbxivxdye.avif",
+          "name": "Neel Kaur-Parekh",
+          "position": "President"
+        },
+        {
+          "department": "Public Forum",
+          "imageSrc": "https://res.cloudinary.com/dokhmjxnx/image/upload/v1736655610/cr6d52mmsle62cvyqtvq.jpg",
+          "name": "Riddhish Saravanan",
+          "position": "Vice President"
+        },
+        {
+          "department": "Public Forum",
+          "imageSrc": "https://res.cloudinary.com/dokhmjxnx/image/upload/v1736655652/ymkgnevx1abglksovfq7.avif",
+          "name": "Kshitij Gairola",
+          "position": "Secretary"
+        },
+        {
+          "department": "Public Forum",
+          "imageSrc": "https://res.cloudinary.com/dokhmjxnx/image/upload/v1736655680/aotcjy2tt7tbnqfc2hfb.avif",
+          "name": "Alex Liao",
+          "position": "Treasurer"
+        },
+        {
+          "department": "Public Forum",
+          "imageSrc": "https://res.cloudinary.com/dokhmjxnx/image/upload/v1736655734/ojr91oqvjobgy5ok0m4e.avif",
+          "name": "Mahika Goswami",
+          "position": " Communications Lead"
+        },
+        {
+          "department": "Public Forum",
+          "imageSrc": "/placeholder.svg",
+          "name": "Atharv Gabada",
+          "position": "Debate Captain"
+        }
+      ]
+    },
+    "mission": {
+      "title": "Our Mission",
+      "description": "At EHS Debate we aim to foster a community for students to explore ideas, challenge perspectives, and grow as public speakers. Through debate we inspire critical thinking and a place to discuss and understand complex issues. We believe every voice matters and we strive for a environment of respect, learning, and collaboration.",
+      "imageSrc": "https://res.cloudinary.com/dokhmjxnx/image/upload/v1736655378/w14grhtstbekmyto12wm.jpg"
+    }
+  },
+  "aeroAdvantage": {
+    "opener": {
+      "cta": "Sign up now",
+      "description": "The Aero Advantage program is a year-round, bi-weekly middle school debate initiative that fosters critical thinking, encourages meaningful connections, and prepares students for high school debate and beyond.",
+      "title": "Aero Advantage Program",
+      "priceText": "Join Aeroaunt Advantage Now!"
+    },
+
+    "locationAndDatesSection": {
+      "title": "Locations",
+      "locationsAndDates": [
+        {
+          "date": "01/16/25",
+          "location": "Emerald High School",
+          "time": "3:15 PM"
+        },
+        {
+          "date": "01/30/25",
+          "location": "Emerald High School",
+          "time": "3:15 PM"
+        },
+        {
+          "date": "02/13/25",
+          "location": "Emerald High School",
+          "time": "3:15 PM"
+        },
+        {
+          "date": "02/27/24",
+          "location": "Emerald High School",
+          "time": "3:15 PM"
+        },
+        {
+          "date": "03/13/25",
+          "location": "Emerald High School",
+          "time": "3:15 PM"
+        },
+        {
+          "date": "03/27/24",
+          "location": "Emerald High School",
+          "time": "3:15 PM"
+        }
+      ]
+    },
+    "locationSection": {
+      "title": "Dates and Location ",
+      "imageSrc": "/placeholder.svg?height=300&width=500"
+    },
+    "photos": [
+      {
+        "imageSrc": "/placeholder.svg?height=300&width=500"
+      }
+    ],
+    "teamTitle": "Our Team",
+    "teamMembers": [
+      {
+        "name": "Neel Kaur-Parekh ",
+        "bio": "Neel is a sophomore at Emerald High School, holds the position of EHS Debate President. In his inaugural high school season, he and Kshitij achieved a ranking as high as 54th in Public Forum Debate for teams nationwide. Neel also placed in the Top 10 at the California State Championship, where he secured 4th place in preliminary seeding. Moreover, he recently taught at the Gemini Debate Academy summer camp to over 40 students. In his free time, Neel loves to exercise and volunteer for the public with his nonprofit, Gardeners of the Galaxy. Neel is both motivated and excited to start the year and can’t wait to work with you all!",
+        "imageSrc": "https://res.cloudinary.com/dokhmjxnx/image/upload/v1736655922/ozlxutuxoqiqlmvnfrni.avif"
+      },
+      {
+        "name": "Riddhish Saravanan",
+        "bio": "Riddhish is a sophomore at Emerald High, holding the position of Vice President he has championed the TOC Digital Speech and Debate Series 1 tournament in Junior Varsity, made it to outrounds at the Stanford Invitational Tournament in JV achieving a preliminary seed of 8th in a pool of 111 entries with Alex. This season he has been ranked as high as 200th nationwide and has been ranked as high as 21st at the Quarry Lane Invitational. He enjoys working on engineering projects in his spare time and likes to read and play sports. Riddhish is looking forward to teaching at The Aeronaut Advantage. ",
+        "imageSrc": "https://res.cloudinary.com/dokhmjxnx/image/upload/v1736655949/ajxugxgrkjq4gs2hz68m.jpg"
+      },
+      {
+        "name": "Kshitij Gairola",
+        "bio": "Kshitij is a sophomore at Emerald High School and is the secretary of the Emerald Speech and Debate Club. Most notably, He has achieved top 10 at the California State Championship, and made it to the top 32 at the Columbia University Invitational in his inaugural debate season. Additionally, He has made it to the top 64 at both the Stanford University and the UC Berkeley Invitationals. During the summer, He taught a summer camp to over 40 students alongside fellow EHS debate board members. He was ranked 54th in the nation at his peak, alongside his partner Neel. In his free time, he plays the bass and does karate. ",
+        "imageSrc": "https://res.cloudinary.com/dokhmjxnx/image/upload/v1736656087/tvwxm1wchp73i3h5fbn8.avif"
+      },
+      {
+        "name": "Mahika Goswami",
+        "bio": "Mahika is a sophomore at Emerald High. She’s the Outreach Director for the Emerald Speech and Debate. Mahika has had experience in MSPDP, Parliamentary debate, and is now committed to Public Forum! So far in PF, she has gone to TOC DSDS #3 in JV and NSD PF camp. Outside of debate, Mahika is a dancer at the Leela Youth Dance Company and she loves to cozy up and read in her free time! Mahika is so excited to meet you all and be an instructor at Aeronaut Advantage. ",
+        "imageSrc": "https://res.cloudinary.com/dokhmjxnx/image/upload/v1736656116/o9jcsok8ntnfm6srutdm.avif"
+      },
+      {
+        "name": "Felix Xu",
+        "bio": "Felix is a sophomore at Emerald High. He is an instructor for the EHS debate program, dedicated to teaching middle school students PF debate. So far in PF, he has gone to the NSD PF camp, going 3-3 at the in-camp tourney. Outside of debate, he enjoys tennis, hanging out with friends, and exercising. He can’t wait to meet you all and be an instructor at Aeronaut Advantage",
+        "imageSrc": "https://res.cloudinary.com/dokhmjxnx/image/upload/v1736656151/cl3pk5wuih6pirtxbfk1.avif"
+      },
+      {
+        "name": "Arjun Mamidi",
+        "bio": "Arjun is a sophomore at Emerald High School and this is his second year doing public forum debate and has competed in around 10 tournaments. He has prior debate experience in MSPDP at Fallon and enjoys public speaking. Arjun has a keen interest in history and geography. He also enjoys physical activity and is currently on the football team and has done wrestling and swim for the past two years and is planning on continuing it throughout highschool. Arjun is excited to get to know everyone and help them succeed through the Aero Advantage Program.",
+        "imageSrc": "https://res.cloudinary.com/dokhmjxnx/image/upload/v1736656189/q99s6ci1mrkk5ggfguup.avif"
+      },
+      {
+        "name": "Akshat Odugu",
+        "bio": "Akshath is a sophomore at Emerald High School who is an instructor for the EHS Aero Advantage program. He started doing debate this year, found it to be an amazingly fun and exciting activity, and has competed in around 4 tournaments so far. Akshath also loves to play the guitar in his free time, and is part of Emerald High’s honors band. He can’t wait to share his experience with you all, and is looking forward to helping you advance in your debate careers!",
+        "imageSrc": ""
+      }
+    ]
+  },
+  "components": {
+    "hero": {
+      "title": "Emerald High School Speech & Debate",
+      "subtitle": "Connect, Inspire, Grow",
+      "description": "CHAMPION QUARRY LANE INVITATIONAL, CHAMPION DIGITAL DEBATE SERIES 1, NSDA SCHOOL OF EXCELLENCE, TOP 10 IN CALIFORNIA",
+      "link": "/",
+      "cta": "Click now to sign up: 24-25 Membership Form"
+    },
+    "joinLink": "forms.com"
+  },
+  "landing": {
+    "cta": {
+      "title": "Join EHS Speech and Debate",
+      "description": "Use the button below to take the first step on your path to become a debate champion!",
+      "button": {
+        "text": "Join EHS Speech and Debate",
+        "href": "/apply"
+      },
+      "imageSrc": "https://res.cloudinary.com/dokhmjxnx/image/upload/v1736654441/ssiq33wvwzgah6s842qj.png"
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "subtitle": "Below are some common questions we receive along with their answers. Please check these before contacting us!",
+      "faqData": [
+        {
+          "question": " HOW DO I JOIN EHS DEBATE?",
+          "answer": "You can join by filling out the form under the “Join Us” page on our website! These meetings occur twice a month during access period and allow members to get key information regarding upcoming events. To get meeting information such as dates, time, and location make sure to join our discord located here: https://discord.gg/cPmkWkpV"
+        },
+        {
+          "question": "WHAT ARE THE EVENTS OFFERED?",
+          "answer": "EHS Debate currently only offers Public Forum but we are looking to branch out into different forms of debate soon!"
+        },
+        {
+          "question": "WHERE DO FULL CLUB MEETINGS TAKE PLACE?",
+          "answer": "Full club meetings take place in the library at EHS every other Wednesday morning from 7:00 to 8:30."
+        },
+        {
+          "question": "WHAT ARE THE LEVELS OF COMPETITION?",
+          "answer": "At Emerald High Debate we have 3 debate rosters. Novice/JV, Varsity, and Traveling Varsity. The requirements are as follows: NOVICE/JV is open to all, with no pre-requisites If you reach outrounds at a novice/JV tournament we encourage VARSITY participation. If you go 3-3 at 3 varsity tournaments you make it to VARSITY TEAM If you break at one varsity tournament you can make it to the TRAVELING VARSITY TEAM The exact determination of the rosters per team will be decided by roster debates."
+        },
+        {
+          "question": "WHAT ARE MY MEMBERSHIP DUES?",
+          "answer": " We charge a $400 membership dues in order to cover expenses such as Coaching, Tournaments, and Travel."
+        },
+        {
+          "question": "HOW DO I PAY MY CLUB DUES?",
+          "answer": " Use the paypal link: PayPal.me/EHSSpeechDebate OR find the QR Code on our \"Join Us\" page Send us a screenshot of your payment to bills.ehssd@gmail.com"
+        },
+        {
+          "question": "HOW MANY TOURNAMENTS SHOULD YOU ATTEND IN A YEAR? ",
+          "answer": " But the more tournaments you attend the better and the best way to learn in debate is by attending tournaments. Hence, we suggest attending 3-5 tournaments for our novice teams. And 7-10 tournaments for varsity team members."
+        },
+        {
+          "question": "WHO ARE OUR PARENT ADVISORS? ",
+          "answer": " Our lead parent advisor is Veena Devarakonda. She can be reached at: presh76@gmail.com Other membors of our parent advisory team include: - Mr. Vijay Ramalingam (Treasurer) - Mr. Avinash Mamidi (fundraising and community outreach) - Mrs. Arundhati Shewade (volunteer management)"
+        },
+        {
+          "question": "HOW DO I BECOME A NSDA MEMBER? ",
+          "answer": " https://www.speechanddebate.org/student-membership/ view this website and follow the steps listed to become an NSDA member!"
+        }
+      ]
+    },
+    "gallary": [],
+    "testimonials": {
+      "title": "Success Stories",
+      "subtitle": "Hear from our members",
+      "items": [
+        {
+          "quote": "Speech & Debate transformed my confidence and helped me get into my dream college. The critical thinking skills I learned in debate have been invaluable in college and beyond. Joining the debate team was the best decision I made in high school.",
+          "author": "Emily R.",
+          "role": "Alumni '22"
+        },
+        {
+          "quote": "Joining the debate team was the best decision I made in high school. I'm so glad I joined the team and I can't wait to see what we'll accomplish together.",
+          "author": "James L.",
+          "role": "State Finalist '23"
+        },
+        {
+          "quote": "I'm so glad I joined the team and I can't wait to see what we'll accomplish together. I'm excited to be a part of this team and to learn from the experienced and passionate members of the team.",
+          "author": "Sarah M.",
+          "role": "Team Captain '23"
+        },
+        {
+          "quote": "I'm so glad I joined the team and I can't wait to see what we'll accomplish together. I'm excited to be a part of this team and to learn from the experienced and passionate members of the team.",
+          "author": "Sarah M.",
+          "role": "Team Captain '23"
+        }
+      ]
+    },
+    "whatYouGet": {
+      "title": "What you get",
+      "list": [
+        {
+          "paragraph": "Critical Thinking Skills"
+        },
+        {
+          "paragraph": "Research and Argumentative Skills"
+        },
+        {
+          "paragraph": "Public Speaking"
+        },
+        {
+          "paragraph": "Leadership"
+        },
+        {
+          "paragraph": "Lifelong Friends"
+        }
+      ],
+      "learnMore": [
+        {
+          "text": "Students",
+          "href": "/students"
+        },
+        {
+          "text": "Parents",
+          "href": "/parents"
+        }
+      ]
+    },
+    "whyJoin": {
+      "title": "Why Join Speech & Debate?",
+      "reason": "Speech & Debate is a team sport that helps you develop your public speaking and critical thinking skills in a environment filled with like minded individuals",
+      "imageSrc": "https://res.cloudinary.com/dokhmjxnx/image/upload/v1736658836/wq5qtz0rgmunuam89peq.jpg",
+      "accolades": [
+        {
+          "paragraph": "NSDA TOP 20 TEAM IN DEBATE"
+        },
+        {
+          "paragraph": "2024 NSDA DEBATE SCHOOL OF EXCELLENCE"
+        },
+        {
+          "paragraph": "2023 NSDA TOP 20"
+        },
+        {
+          "paragraph": "Best Debate Team"
+        },
+        {
+          "paragraph": "National Champions"
+        }
+      ]
+    }
+  },
+  "parents": {
+    "judging": {
+      "title": "Judge Training",
+      "videoDescription": "Watch this video from a Judge Training session presented by EHS Speech and Debate to learn about how to judge debate rounds!",
+      "videoEmbedUrl": "https://www.youtube.com/embed/video-id",
+      "resourcesTitle": "Judging Resources",
+      "resources": [
+        {
+          "label": "CHSSA Judging Guide",
+          "href": "https://example.com/chssa-guide"
+        },
+        {
+          "label": "NSDA Judging Guide",
+          "href": "https://example.com/nsda-guide"
+        }
+      ],
+      "trainingVideosTitle": "Judging Training Videos",
+      "trainingVideos": [
+        {
+          "label": "How to Write a Good Paradigm",
+          "href": "https://www.youtube.com/watch?v=video-id"
+        },
+        {
+          "label": "Judging Speech Events",
+          "href": "https://www.youtube.com/watch?v=video-id"
+        },
+        {
+          "label": "Judging Debate Events",
+          "href": "https://www.youtube.com/watch?v=video-id"
+        }
+      ],
+      "ballotTitle": "Framing Your Ballot",
+      "ballotDescription": "The ballot is your platform to give the competitors feedback. Use it to share your decision and why one side prevailed.",
+      "ballotImage": {
+        "src": "/ballot-template.jpg",
+        "captions": "Example of a paper ballot from a public forum."
+      },
+      "paradigmTitle": "Setting Up a Paradigm",
+      "paradigmDescription": "Paradigms allow debaters to understand your preferences before the round. Fill out your information in Tabroom under your account. Make sure to put important things like your preferences for the round",
+      "paradigmImage": {
+        "src": "/paradigm-template.jpg",
+        "captions": "Template to follow for setting up your judging paradigm."
+      },
+      "tabroomTitle": "Tabroom",
+      "tabroomDescription": "Access all tournament rounds, set up your paradigm, and submit ballots on Tabroom.",
+      "tabroomLink": "https://www.tabroom.com"
+    },
+    "mentor": {
+      "title": "Chaperone Sign up Instructions",
+      "videoSrc": "https://www.youtube.com/watch?v=7GBN9IK8g80",
+      "clearanceInstructions": [
+        {
+          "title": "Level 2 Clearance",
+          "description": "You need this level of clearance in order to drive students to local tournaments and be a day chaperone. Clearance can take up to 10 days."
+        },
+        {
+          "title": "Level 3 Clearance",
+          "description": "You need this level of clearance in order to be an overnight chaperone at travel tournaments. Clearance can take up to 45 days."
+        }
+      ],
+      "additionalLinks": [
+        {
+          "text": "Create a Be A Mentor Account",
+          "href": "https://beamentor.org/linkpages/mentorasp/specialprojects/DUSD/"
+        },
+        {
+          "text": "If you have a Be A Mentor account, click here to log in",
+          "href": "https://www.beamentor.org/login"
+        }
+      ]
+    },
+    "support": {
+      "title": "Support EHS S&D",
+      "description": "Click here to support the Emerald High School Speech & Debate Club",
+      "link": "https://ehspfso.square.site/speech-and-debate"
+    }
+  },
+  "students": {
+    "calendarLink": "https://calendar.google.com/calendar/u/0/embed?src=ehsdebateclub24@gmail.com&ctz=America/Los_Angeles",
+    "resources": [
+      {
+        "href": "https://www.tabroom.com/index/index.mhtml",
+        "text": "Tabroom"
+      },
+      {
+        "href": "https://calendar.google.com/calendar/u/0/embed?src=ehsdebateclub24@gmail.com&ctz=America/Los_Angeles",
+        "text": "Calendar"
+      },
+      {
+        "href": "https://www.youtube.com/@danielgarepisholland",
+        "text": "Round Recordings"
+      },
+      {
+        "href": "https://opencaselist.com/hspf24",
+        "text": "openCaselist"
+      },
+      {
+        "href": "https://www.speechanddebate.org/",
+        "text": "NSDA"
+      }
+    ],
+    "tournamentInfo": [
+      {
+        "header": "Guidelines",
+        "description": [
+          {
+            "paragraph": "Submit all required forms at least 2 weeks before the tournament"
+          },
+          {
+            "paragraph": "Ensure all forms are signed by both student and parent/guardian"
+          },
+          {
+            "paragraph": "Include all necessary medical and emergency contact information"
+          },
+          {
+            "paragraph": "Follow all directions listed on the Discord/Signup Form"
+          }
+        ]
+      },
+      {
+        "header": "Whats going on?",
+        "description": [
+          {
+            "paragraph": "Test"
+          }
+        ]
+      }
+    ],
+    "upcomingDates": [
+      {
+        "date": "January 15th",
+        "event": "Club Meeting",
+        "type": "Meeting"
+      },
+      {
+        "date": "January 29th",
+        "event": "Club Meeting",
+        "type": "Meeting"
+      },
+      {
+        "date": "February 12th",
+        "event": "Club Meeting",
+        "type": "Meeting"
+      }
+    ],
+    "upcomingEvents": [
+      {
+        "date": "February 21",
+        "title": "TOC DSDS 2",
+        "description": "Tournament",
+        "time": "3:30 PM",
+        "buttonText": "Signup",
+        "details": {
+          "location": "Online",
+          "deadlines": {
+            "signup": "Jan 14",
+            "fees": "Jan 15",
+            "drop": "Jan 15"
+          },
+          "moreInfoLink": "https://docs.google.com/forms/d/e/1FAIpQLSfn3ZkTTzFAJ1Gu5NuDUMOBBAn8cO0SJUYIjRPKTTeUxSC1uA/viewform",
+          "additionalInfo": ""
+        }
+      },
+      {
+        "date": "March 1",
+        "title": "State Qualifiers",
+        "description": "Tournament",
+        "time": "8 AM",
+        "buttonText": "Sign Up",
+        "details": {
+          "location": "In person",
+          "deadlines": {
+            "signup": "TBD",
+            "fees": "TBD",
+            "drop": "TBD"
+          },
+          "moreInfoLink": "TBD",
+          "additionalInfo": ""
+        }
+      }
+    ]
+  }
+}
