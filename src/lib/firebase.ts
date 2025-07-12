@@ -1,16 +1,15 @@
-// firebase.ts
-import { initializeApp } from "firebase/app";
-import { getAuth, GoogleAuthProvider } from "firebase/auth";
-import { getFirestore } from "firebase/firestore";
+import { initializeApp } from 'firebase/app';
+import { getAuth, GoogleAuthProvider } from 'firebase/auth';
+import { getFirestore } from 'firebase/firestore';
 
 // Your Firebase config object from Firebase console
 const firebaseConfig = {
-  apiKey: "AIzaSyCT6YHLYZyqiUpbI4uvfEIqB-orzw1WHC4",
-  authDomain: "personalprojects-4fb54.firebaseapp.com",
-  projectId: "personalprojects-4fb54",
-  storageBucket: "personalprojects-4fb54.firebasestorage.app",
-  messagingSenderId: "592650571420",
-  appId: "1:592650571420:web:2d2d177cc8e83a2a5aa759",
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
 };
 
 // Initialize Firebase

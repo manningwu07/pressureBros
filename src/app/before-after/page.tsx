@@ -6,45 +6,37 @@ import { Badge } from "~/components/ui/badge";
 import { Button } from "~/components/ui/button";
 import { Star, Phone } from "lucide-react";
 import Image from "next/image";
-import type { Testimonial } from "~/types/types";
+import type { PressureBrosData, Testimonial } from "~/types/types";
 import ImageComparisonSlider from "./imageComparisonSlider";
+import { usePullContent } from "~/utils/pageUtils";
+import { Skeleton } from "~/components/ui/skeleton";
 
-const BeforeAfterPage = () => {
-  const beforeAfterGallery = [
-    {
-      title: "Driveway Transformation",
-      before: "/Before.png",
-      after: "/After.png",
-      description: "Removed years of oil stains and grime",
-    },
-    {
-      title: "House Exterior Cleaning",
-      before: "/api/placeholder/400/300",
-      after: "/api/placeholder/400/300",
-      description: "Complete siding restoration",
-    },
-  ];
 
-  const detailedTestimonials = [
-    {
-      name: "Monkey",
-      location: "Residential Customer",
-      rating: 5,
-      image: "/api/placeholder/80/80",
-      comment:
-        "I love Aiden Li, he's a pro at what he does! Pressure Bros transformed my driveway and it looks brand new. They were professional, careful, and delivered on time. Highly recommend!",
-      service: "Driveway Cleaning",
-    },
-    {
-      name: "Another Monkey",
-      location: "Aidens house",
-      rating: 5,
-      image: "/api/placeholder/80/80",
-      comment:
-        "Aiden is soooo hot; I want him",
-      service: "Fun",
-    }
-  ];
+interface PageProps {
+  adminContent: PressureBrosData;
+  adminError: boolean;
+}
+
+
+const BeforeAfterPage = ({ adminContent, adminError }: PageProps) => {
+  const pullContent = usePullContent();
+  const content = adminContent ?? pullContent.content;
+  const error = adminError ?? pullContent.error;
+
+  if (error) {
+    return <div className="py-10 text-center">Error loading content.</div>;
+  }
+  if (!content) {
+    return (
+      <div className="space-y-10 p-4">
+        <Skeleton className="h-96 w-full" />
+        <Skeleton className="h-64 w-full" />
+        <Skeleton className="h-64 w-full" />
+      </div>
+    );
+  }
+
+  const { hero, gallery, testimonials, cta  } = content.beforeAfterPage;
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -57,14 +49,13 @@ const BeforeAfterPage = () => {
             transition={{ duration: 0.6 }}
           >
             <Badge className="mb-4 bg-blue-400 text-white">
-              See The Difference
+              {hero.badge}
             </Badge>
             <h1 className="mb-4 text-4xl font-bold text-gray-800 md:text-5xl">
-              Before & After Gallery
+              {hero.title}
             </h1>
             <p className="mx-auto max-w-2xl text-xl text-gray-600">
-              Witness the incredible transformations we have achieved for our
-              satisfied customers across the Tri-Valley
+              {hero.subtitle}
             </p>
           </motion.div>
         </div>
@@ -74,7 +65,7 @@ const BeforeAfterPage = () => {
       <section className="py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-8 md:grid-cols-2">
-            {beforeAfterGallery.map((item, index) => (
+            {gallery.map((item, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
@@ -109,15 +100,15 @@ const BeforeAfterPage = () => {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-16 text-center">
             <h2 className="mb-4 text-4xl font-bold text-gray-800">
-              Customer Success Stories
+              {testimonials.title}
             </h2>
             <p className="text-xl text-gray-600">
-              Real feedback from real customers who experienced our service
+              {testimonials.subtitle}
             </p>
           </div>
 
           <div className="grid gap-8 md:grid-cols-2">
-            {detailedTestimonials.map((testimonial, index) => (
+            {testimonials.items.map((testimonial, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
@@ -128,7 +119,7 @@ const BeforeAfterPage = () => {
                   <CardContent className="p-6">
                     <div className="flex items-start space-x-4">
                       <Image
-                        src={testimonial.image}
+                        src={testimonial.imageSrc}
                         alt={testimonial.name}
                         width={64}
                         height={64}
@@ -183,11 +174,10 @@ const BeforeAfterPage = () => {
             transition={{ duration: 0.6 }}
           >
             <h2 className="mb-4 text-4xl font-bold">
-              Ready for Your Own Transformation?
+              {cta.title}
             </h2>
             <p className="mb-8 text-xl">
-              Join hundreds of satisfied customers who havve experienced the
-              Pressure Bros difference!
+              {cta.subtitle}
             </p>
             <div className="flex flex-col justify-center gap-4 sm:flex-row">
               <Button
@@ -195,14 +185,14 @@ const BeforeAfterPage = () => {
                 className="bg-white text-blue-400 hover:bg-gray-100"
               >
                 <Phone className="mr-2 h-4 w-4" />
-                Get Your Free Quote
+                {cta.quoteButton.text}
               </Button>
               <Button
                 size="lg"
                 variant="outline"
                 className="border-white text-black hover:bg-white hover:text-blue-400"
               >
-                Schedule Service
+                {cta.scheduleButton.text}
               </Button>
             </div>
           </motion.div>

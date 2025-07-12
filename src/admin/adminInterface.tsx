@@ -3,12 +3,12 @@
 import { useState, useEffect, useCallback } from "react";
 import { ScrollArea } from "~/components/ui/scroll-area";
 import { Button } from "~/components/ui/button";
-import type { DataStructure } from "~/utils/dataStructure";
 import { renderEditField } from "./renderEditField";
 import { DeployDialog } from "./DeployDialog";
 import { PreviewPane } from "./PreviewPane";
 import { EmailManagementDialog } from "./emailManagementDialog";
 import { fetchFullContent } from "~/utils/pageUtils";
+import type { PressureBrosData } from "~/types/types";
 // To fundementally change the datastructure or add new nav links:
 // Go to to line 108 and add/delete nav links
 // Go to DeployDialog and line 34 (add/delete sections of content.json when shipping to firebase)
@@ -19,7 +19,7 @@ import { fetchFullContent } from "~/utils/pageUtils";
 // import initalContent from "~/content.json";
 
 export default function AdminInterface() {
-  const [data, setData] = useState<DataStructure | null>(null);
+  const [data, setData] = useState<PressureBrosData | null>(null);
   const [activePage, setActivePage] = useState("landing");
   const [sliderPosition, setSliderPosition] = useState(33);
   const [isDragging, setIsDragging] = useState(false);
@@ -105,7 +105,8 @@ export default function AdminInterface() {
           <div className="space-y-8 p-8">
             <ScrollArea className="w-full">
               <div className="flex flex-wrap pb-4">
-                {["landing", "about", "aeroAdvantage", "students", "parents"].map(
+                {/* Change this to the names later */}
+                {["homepage", "beforeAfterPage", "processPage"].map(
                   (
                     page, // Change this to page names
                   ) => (
@@ -127,7 +128,7 @@ export default function AdminInterface() {
                 data[activePage as keyof typeof data],
                 handleEdit,
               )}
-            {renderEditField("components", data.components, handleEdit)}
+            {renderEditField("components", data.navigation, handleEdit)}
           </div>
         </ScrollArea>
 

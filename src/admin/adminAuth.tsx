@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unsafe-call */
+
 import React, { useEffect, useState, useRef } from 'react';
 import { onAuthStateChanged } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
@@ -20,26 +22,26 @@ const AdminAuth = ({ children }: { children: React.ReactNode }) => {
           if (isAdmin) {
             setIsAdmin(true);
           } else {
-            navigate('/');
+            await navigate('/');
           }
         } else if (!signInTriggered.current) {
           signInTriggered.current = true;
           try {
             const result = await signInWithGoogle();
-            if (result && result.user) {
+            if (result?.user) {
               const email = result.user.email ?? '';
               const isAdmin = await checkIfAdmin(email);
               if (isAdmin) {
                 setIsAdmin(true);
               } else {
-                navigate('/');
+                await navigate('/');
               }
             } else {
-              navigate('/');
+              await navigate('/');
             }
           } catch (error) {
             console.error("Error during Google sign-in:", error);
-            navigate('/');
+            await navigate('/');
           }
         }
   

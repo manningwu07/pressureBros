@@ -1,18 +1,20 @@
-import { doc, getDoc } from "firebase/firestore";
+/* eslint-disable @typescript-eslint/no-unsafe-call */
+
+import { doc, getDoc, setDoc } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { db } from "~/lib/firebase";
 import { openDB } from "idb";
-import type { DataStructure } from "./dataStructure";
-// import initalContent from "~/content.json"
+import type { PressureBrosData } from "~/types/types";
+import initalContent from "~/content.json"
 
 export interface PageProps {
-  adminContent?: DataStructure;
+  adminContent?: PressureBrosData
   adminError?: boolean;
 }
 
 // Helper function to initialize IndexedDB
 async function getDatabase() {
-  return openDB("ehsContentCache", 1, {
+  return openDB("PressureBrosContentCache", 1, {
     upgrade(db) {
       db.createObjectStore("pages", { keyPath: "key" });
     },
@@ -53,30 +55,32 @@ function hasCircularReference(obj: any, seen = new Set()) {
 }
 
 // Function to fetch the entire content document from Firestore and cache it
-export async function fetchFullContent(): Promise<DataStructure | null> {
+export async function fetchFullContent(): Promise<PressureBrosData | null> {
   try {
-    const docRef = doc(db, "ehsSpeechAndDebate", "content");
+    const docRef = doc(db, "PressureBros", "content"); 
+    // Resets the document
+    // await setDoc(docRef, initalContent); 
     const docSnap = await getDoc(docRef);
 
     if (docSnap.exists()) {
-      const data = docSnap.data() as DataStructure;
+      const data = docSnap.data() as PressureBrosData;
 
       // Cache the entire document in IndexedDB
       await cacheData("fullContent", data);
       return data;
     } else {
-      console.error("Document does not exist");
-      return null;
+      console.warn("Document 'PressureBros/content' does not exist. Creating it with initial content.");
+      return null
     }
   } catch {
     console.error("Error fetching data");
-    return null;
+    return initalContent as PressureBrosData;
   }
 }
 
 // Custom hook to manage content state
 export function usePullContent() { 
-  const [content, setContent] = useState<DataStructure | null>(null);
+  const [content, setContent] = useState<PressureBrosData | null>(null);
   const [error, setError] = useState<boolean>(false);
 
   useEffect(() => {
@@ -91,7 +95,7 @@ export function usePullContent() {
       .catch(() => setError(true)); // Handle unexpected errors
   }, []);
   
-  const fetchContent = async (): Promise<DataStructure | null> => {
+  const fetchContent = async (): Promise<PressureBrosData | null> => {
     // Try to load cached data first
     const cachedData = await getCachedData("fullContent");
     if (cachedData) {
@@ -115,7 +119,7 @@ export function usePullContent() {
       return data;
     }
   
-    return null; // Return null if no data could be fetched
+    return initalContent as PressureBrosData; // Return null if no data could be fetched
   };
   
 

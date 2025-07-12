@@ -86,53 +86,53 @@ const ImageComparisonSlider = ({
       onDragStart={(e) => e.preventDefault()}
     >
       {/* After Image (Background) */}
-      <div className="absolute inset-0 pointer-events-none">
+      <div className="pointer-events-none absolute inset-0">
         <Image
           src={afterImage}
           alt={afterLabel}
           fill
-          className="object-cover pointer-events-none"
-          priority
+          loading="lazy"
+          className="pointer-events-none object-cover"
           draggable={false}
           onDragStart={(e) => e.preventDefault()}
         />
-        <div className="absolute bottom-4 right-4 rounded bg-black/50 px-2 py-1 text-sm font-medium text-white pointer-events-none">
+        <div className="pointer-events-none absolute right-4 bottom-4 rounded bg-black/50 px-2 py-1 text-sm font-medium text-white">
           {afterLabel}
         </div>
       </div>
 
       {/* Before Image (Clipped) */}
       <div
-        className="absolute inset-0 overflow-hidden pointer-events-none"
+        className="pointer-events-none absolute inset-0 overflow-hidden"
         style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
       >
         <Image
           src={beforeImage}
           alt={beforeLabel}
           fill
-          className="object-cover pointer-events-none"
-          priority
+          className="pointer-events-none object-cover"
+          loading="lazy"
           draggable={false}
           onDragStart={(e) => e.preventDefault()}
         />
-        <div className="absolute bottom-4 left-4 rounded bg-black/50 px-2 py-1 text-sm font-medium text-white pointer-events-none">
+        <div className="pointer-events-none absolute bottom-4 left-4 rounded bg-black/50 px-2 py-1 text-sm font-medium text-white">
           {beforeLabel}
         </div>
       </div>
 
       {/* Slider Line */}
       <div
-        className="absolute top-0 z-10 h-full w-0.5 bg-white shadow-lg pointer-events-none"
+        className="pointer-events-none absolute top-0 z-10 h-full w-0.5 bg-white shadow-lg"
         style={{ left: `${sliderPosition}%` }}
       >
         {/* Slider Handle */}
         <div
-          className="absolute top-1/2 -translate-x-1/2 -translate-y-1/2 cursor-ew-resize rounded-full bg-white p-2 shadow-lg transition-transform hover:scale-110 pointer-events-auto"
+          className="pointer-events-auto absolute top-1/2 -translate-x-1/2 -translate-y-1/2 cursor-ew-resize rounded-full bg-white p-2 shadow-lg transition-transform hover:scale-110"
           onMouseDown={handleMouseDown}
           onTouchStart={handleMouseDown}
           onDragStart={(e) => e.preventDefault()}
         >
-          <div className="flex space-x-1 pointer-events-none">
+          <div className="pointer-events-none flex space-x-1">
             <div className="h-4 w-0.5 bg-gray-400"></div>
             <div className="h-4 w-0.5 bg-gray-400"></div>
             <div className="h-4 w-0.5 bg-gray-400"></div>
@@ -141,7 +141,7 @@ const ImageComparisonSlider = ({
       </div>
 
       {/* Instructions */}
-      <div className="absolute top-4 left-1/2 -translate-x-1/2 rounded bg-black/50 px-3 py-1 text-xs text-white opacity-75 pointer-events-none">
+      <div className="pointer-events-none absolute top-4 left-1/2 -translate-x-1/2 rounded bg-black/50 px-3 py-1 text-xs text-white opacity-75">
         Drag to compare
       </div>
     </div>

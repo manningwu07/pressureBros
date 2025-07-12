@@ -14,57 +14,52 @@ import {
   ArrowRight,
   MapPin,
 } from "lucide-react";
-import type { Testimonial } from "~/types/types";
+import type { PressureBrosData, Testimonial } from "~/types/types";
+import { usePullContent } from "~/utils/pageUtils";
+import { Skeleton } from "~/components/ui/skeleton";
+import jsonContent from "~/content.json"
 
-const Homepage = () => {
-  const services = [
-    {
-      title: "House Washing",
-      description: "Complete exterior house cleaning and restoration",
-      icon: <Zap className="h-8 w-8 text-blue-400" />,
-    },
-    {
-      title: "Driveway Cleaning",
-      description: "Remove oil stains, dirt, and grime from driveways",
-      icon: <Shield className="h-8 w-8 text-blue-400" />,
-    },
-    {
-      title: "Deck & Patio",
-      description: "Restore your outdoor living spaces to like-new condition",
-      icon: <Clock className="h-8 w-8 text-blue-400" />,
-    },
-  ];
+interface PageProps {
+  adminContent: PressureBrosData | null;
+  adminError: boolean;
+}
 
-  const testimonials = [
-    {
-      name: "Sarah Johnson",
-      rating: 5,
-      comment:
-        "Amazing work! My driveway looks brand new. The Pressure Bros team was professional and efficient.",
-    },
-    {
-      name: "Mike Chen",
-      rating: 5,
-      comment:
-        "Incredible transformation of our house exterior. Highly recommend their services!",
-    },
-    {
-      name: "Lisa Rodriguez",
-      rating: 5,
-      comment:
-        "Fast, reliable, and excellent results. Will definitely use them again.",
-    },
-  ];
+const iconMap = {
+  Zap: <Zap className="h-8 w-8 text-blue-400" />,
+  Shield: <Shield className="h-8 w-8 text-blue-400" />,
+  Clock: <Clock className="h-8 w-8 text-blue-400" />,
+  Star: <Star className="h-8 w-8 text-blue-400" />,
+  CheckCircle: <CheckCircle className="h-8 w-8 text-blue-400" />,
+  Phone: <Phone className="h-8 w-8 text-blue-400" />,
+  ArrowRight: <ArrowRight className="h-8 w-8 text-blue-400" />,
+  MapPin: <MapPin className="w=8 h-8 text-blue-400" />,
+};
 
-  const serviceAreas = [
-    "Dublin, CA",
-    "Pleasenton, CA",
-    "San Ramon, CA",
-    "Livermore, CA",
-  ];
+
+const Homepage = ({ adminContent, adminError }: PageProps) => {
+  const pullContent = usePullContent();
+  const content = adminContent ?? pullContent.content ?? jsonContent;
+  const error = adminError ?? pullContent.error;
+
+  if (error) {
+    return <div className="py-10 text-center">Error loading content.</div>;
+  }
+  if (!content) {
+    return (
+      <div className="space-y-10 p-4">
+        <Skeleton className="h-96 w-full" />
+        <Skeleton className="h-64 w-full" />
+        <Skeleton className="h-64 w-full" />
+      </div>
+    );
+  }
+
+  const { hero, services, serviceAreas, whyChooseUs, testimonials, contact } =
+    content.homepage;
 
   return (
     <div className="min-h-screen">
+        
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-gray-50 to-blue-50 py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -75,14 +70,16 @@ const Homepage = () => {
               transition={{ duration: 0.6 }}
             >
               <Badge className="mb-4 bg-blue-400 text-white">
-                Professional Pressure Washing
+                {hero.badge}
               </Badge>
               <h1 className="mb-6 text-5xl font-bold text-gray-800 md:text-6xl">
-                PRESSURE <span className="text-blue-400">BROS</span>
+                {hero.title.split(" ")[0]}{" "}
+                <span className="text-blue-400">
+                  {hero.title.split(" ")[1]}
+                </span>
               </h1>
               <p className="mx-auto mb-8 max-w-2xl text-xl text-gray-600">
-                Transform your property with our professional pressure washing
-                services. We make dirty surfaces look brand new!
+                {hero.subtitle}
               </p>
               <div className="flex flex-col justify-center gap-4 sm:flex-row">
                 <Button
@@ -90,14 +87,14 @@ const Homepage = () => {
                   className="bg-blue-400 text-white hover:bg-blue-500"
                 >
                   <Phone className="mr-2 h-4 w-4" />
-                  Get Free Quote
+                  {hero.quoteButton.text}
                 </Button>
                 <Button
                   size="lg"
                   variant="outline"
                   className="border-gray-300 text-gray-700"
                 >
-                  View Our Work
+                  {hero.viewWorkButton.text}
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </div>
@@ -111,15 +108,13 @@ const Homepage = () => {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-16 text-center">
             <h2 className="mb-4 text-4xl font-bold text-gray-800">
-              Our Services
+              {services.title}
             </h2>
-            <p className="text-xl text-gray-600">
-              Professional pressure washing for all your needs
-            </p>
+            <p className="text-xl text-gray-600">{services.subtitle}</p>
           </div>
 
           <div className="grid gap-8 md:grid-cols-3">
-            {services.map((service, index) => (
+            {services.items.map((service, index) => (
               <motion.div
                 key={service.title}
                 initial={{ opacity: 0, y: 20 }}
@@ -129,7 +124,7 @@ const Homepage = () => {
                 <Card className="h-full transition-shadow duration-300 hover:shadow-lg">
                   <CardContent className="p-6 text-center">
                     <div className="mb-4 flex justify-center">
-                      {service.icon}
+                      {iconMap[service.icon as keyof typeof iconMap]}
                     </div>
                     <h3 className="mb-2 text-xl font-semibold text-gray-800">
                       {service.title}
@@ -154,25 +149,18 @@ const Homepage = () => {
             >
               <div className="mb-8">
                 <Badge className="mb-4 bg-blue-400 text-sm font-semibold tracking-wider text-white">
-                  SERVICE AREAS
+                  {serviceAreas.badge}
                 </Badge>
                 <h2 className="mb-6 text-4xl font-bold text-gray-800">
-                  Pressure Washing Company
+                  {serviceAreas.title}
                 </h2>
                 <p className="mb-8 text-lg text-gray-600">
-                  We proudly serve the entire Metro Area and have a strong
-                  presence in the following neighborhoods, where we have built a
-                  reputation for customer satisfaction. Contact us today to
-                  receive a{" "}
-                  <span className="font-semibold text-blue-400">
-                    personalized quote
-                  </span>{" "}
-                  tailored to your needs.
+                  {serviceAreas.description}
                 </p>
               </div>
 
               <div className="grid grid-cols-2 gap-4">
-                {serviceAreas.map((area, index) => (
+                {serviceAreas.areas.map((area, index) => (
                   <motion.div
                     key={area}
                     initial={{ opacity: 0, y: 10 }}
@@ -189,7 +177,7 @@ const Homepage = () => {
               <div className="mt-8">
                 <Button className="bg-blue-400 text-white hover:bg-blue-500">
                   <Phone className="mr-2 h-4 w-4" />
-                  Get Quote for Your Area
+                  {serviceAreas.quoteButton.text}
                 </Button>
               </div>
             </motion.div>
@@ -222,16 +210,10 @@ const Homepage = () => {
           <div className="grid items-center gap-12 md:grid-cols-2">
             <div>
               <h2 className="mb-6 text-4xl font-bold text-gray-800">
-                Why Choose Pressure Bros?
+                {whyChooseUs.title}
               </h2>
               <div className="space-y-4">
-                {[
-                  "Professional equipment and eco-friendly solutions",
-                  "Fully insured and licensed technicians",
-                  "Satisfaction guarantee on all services",
-                  "Competitive pricing with no hidden fees",
-                  "Quick response times and flexible scheduling",
-                ].map((item, index) => (
+                {whyChooseUs.reasons.map((item, index) => (
                   <div key={index} className="flex items-start space-x-3">
                     <CheckCircle className="mt-1 h-5 w-5 flex-shrink-0 text-blue-400" />
                     <span className="text-gray-700">{item}</span>
@@ -240,17 +222,16 @@ const Homepage = () => {
               </div>
             </div>
             <div className="rounded-lg bg-blue-400 p-8 text-white">
-              <h3 className="mb-4 text-2xl font-bold">Ready to Get Started?</h3>
+              <h3 className="mb-4 text-2xl font-bold">{whyChooseUs.cta.title}</h3>
               <p className="mb-6">
-                Contact us today for a free estimate. We&apos;ll have your
-                property looking amazing in no time!
+                {whyChooseUs.cta.description} 
               </p>
               <Button
                 size="lg"
                 className="w-full bg-white text-blue-400 hover:bg-gray-100"
               >
                 <Phone className="mr-2 h-4 w-4" />
-                Call (925) 931-2228
+                {whyChooseUs.cta.button.text}
               </Button>
             </div>
           </div>
@@ -262,15 +243,15 @@ const Homepage = () => {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-16 text-center">
             <h2 className="mb-4 text-4xl font-bold text-gray-800">
-              What Our Customers Say
+              {testimonials.title}
             </h2>
             <p className="text-xl text-gray-600">
-              Don&apos;t just take our word for it
+              {testimonials.subtitle}
             </p>
           </div>
 
           <div className="grid gap-8 md:grid-cols-3">
-            {testimonials.map((testimonial, index) => (
+            {testimonials.items.map((testimonial, index) => (
               <motion.div
                 key={testimonial.name}
                 initial={{ opacity: 0, y: 20 }}
@@ -280,12 +261,14 @@ const Homepage = () => {
                 <Card className="h-full">
                   <CardContent className="p-6">
                     <div className="mb-4 flex">
-                      {[...Array(testimonial.rating) as Testimonial[]].map((_, i) => (
-                        <Star
-                          key={i}
-                          className="h-5 w-5 fill-current text-yellow-400"
-                        />
-                      ))}
+                      {[...(Array(testimonial.rating) as Testimonial[])].map(
+                        (_, i) => (
+                          <Star
+                            key={i}
+                            className="h-5 w-5 fill-current text-yellow-400"
+                          />
+                        ),
+                      )}
                     </div>
                     <p className="mb-4 text-gray-600">
                       &quot;{testimonial.comment}&quot;
@@ -305,10 +288,10 @@ const Homepage = () => {
       <section id="contact" className="bg-blue-400 py-20 text-white">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <h2 className="mb-4 text-4xl font-bold">
-            Ready to Transform Your Property?
+            {contact.title}
           </h2>
           <p className="mb-8 text-xl">
-            Get your free quote today and see the Pressure Bros difference!
+            {contact.subtitle}
           </p>
           <div className="flex flex-col justify-center gap-4 sm:flex-row">
             <Button
@@ -316,14 +299,14 @@ const Homepage = () => {
               className="bg-white text-blue-400 hover:bg-gray-100"
             >
               <Phone className="mr-2 h-4 w-4" />
-              Call Now: (925) 931-2228
+              {contact.callButton.text}
             </Button>
             <Button
               size="lg"
               variant="outline"
               className="border-white text-black hover:bg-white hover:text-blue-400"
             >
-              Request Quote Online
+              {contact.quoteButton.text}
             </Button>
           </div>
         </div>

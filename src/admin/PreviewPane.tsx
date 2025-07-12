@@ -1,13 +1,11 @@
+import BeforeAfterPage from "~/app/before-after/page";
+import Homepage from "~/app/page";
+import ProcessPage from "~/app/process/page";
 import { ScrollArea } from "~/components/ui/scroll-area";
-import About from "~/pages/about";
-import AeroAdvantage from "~/pages/AeroAdvantage";
-import LandingPage from "~/pages/LandingPage";
-import ParentsPage from "~/pages/parents";
-import StudentsPage from "~/pages/students";
-import type { DataStructure } from "~/utils/dataStructure";
+import type { PressureBrosData } from "~/types/types";
 
 interface PreviewPaneProps {
-  data: DataStructure;
+  data: PressureBrosData;
   activePage: string;
   width: number;
 }
@@ -16,18 +14,14 @@ export function PreviewPane({ data, activePage, width }: PreviewPaneProps) {
   // Change this to page names
   const renderPreview = () => {
     switch (activePage) {
-      case "landing":
-        return <LandingPage adminContent={data} />;
-      case "aeroAdvantage":
-        return <AeroAdvantage adminContent={data} />;
-      case "about":
-        return <About adminContent={data} />;
-      case "students":
-        return <StudentsPage adminContent={data} />;
-      case "parents":
-        return <ParentsPage adminContent={data} />;
+      case "homepage":
+        return <Homepage adminContent={data} adminError={false} />;
+      case "beforeAfterPage":
+        return <BeforeAfterPage adminContent={data} adminError={false} />;
+      case "processPage":
+        return <ProcessPage adminContent={data} adminError={false} />;
       default:
-        return <LandingPage adminContent={data} />;
+        return <Homepage adminContent={data} adminError={false} />;
     }
   };
 

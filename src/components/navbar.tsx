@@ -1,46 +1,46 @@
 "use client";
 
 import { useState } from "react";
-import Image from 'next/image';
+import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Menu, X, Phone } from "lucide-react";
 import { Button } from "~/components/ui/button";
+import type { NavItem, Button as ButtonType } from "~/types/types";
 
-const Navbar = () => {
+interface NavbarProps {
+  logo: string;
+  navItems: NavItem[];
+  quoteButton: ButtonType;
+}
+
+const Navbar = ({ logo, navItems, quoteButton }: NavbarProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const navItems = [
-    { name: "Home", href: "/" },
-    { name: "Before & After", href: "/before-after" },
-    { name: "Process", href: "/process" },
-    { name: "Contact Us", href: "#contact" },
-  ];
-
   return (
-    <nav className="bg-white shadow-lg sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+    <nav className="sticky top-0 z-50 bg-white shadow-lg">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
-            <Image src="/logo.png" alt="Logo" width={120} height={40} />
+            <Image src={logo} alt="Logo" width={120} height={40} />
           </Link>
-
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden items-center space-x-8 md:flex">
             {navItems.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-gray-700 hover:text-blue-400 transition-colors duration-200"
+                className="text-gray-700 hover:text-blue-400 ..."
               >
                 {item.name}
               </Link>
             ))}
-            <Button className="bg-blue-400 hover:bg-blue-500 text-white">
-              <Phone className="w-4 h-4 mr-2" />
-              Get Quote
-            </Button>
+            <a href={quoteButton.href}>
+              <Button className="bg-blue-400 text-white hover:bg-blue-500">
+                <Phone className="mr-2 h-4 w-4" />
+                {quoteButton.text}
+              </Button>
+            </a>
           </div>
 
           {/* Mobile menu button */}
@@ -60,9 +60,9 @@ const Navbar = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="md:hidden bg-white border-t"
+            className="border-t bg-white md:hidden"
           >
-            <div className="px-2 pt-2 pb-3 space-y-1">
+            <div className="space-y-1 px-2 pt-2 pb-3">
               {navItems.map((item) => (
                 <Link
                   key={item.name}
@@ -73,9 +73,9 @@ const Navbar = () => {
                   {item.name}
                 </Link>
               ))}
-              <Button className="w-full mt-2 bg-blue-400 hover:bg-blue-500 text-white">
-                <Phone className="w-4 h-4 mr-2" />
-                Get Quote
+              <Button className="mt-2 w-full bg-blue-400 text-white hover:bg-blue-500">
+                <Phone className="mr-2 h-4 w-4" />
+                {quoteButton.text}
               </Button>
             </div>
           </motion.div>

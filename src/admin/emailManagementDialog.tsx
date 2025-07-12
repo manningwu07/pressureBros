@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unsafe-call */
+
 import { useState, useEffect } from 'react';
 import { Button } from '~/components/ui/button';
 import { Trash2 } from 'lucide-react';
@@ -25,11 +27,11 @@ export function EmailManagementDialog({ isOpen, setIsOpen }: EmailManagementDial
 
   useEffect(() => {
     const fetchEmails = async (): Promise<string[]> => {
-      const docRef = doc(db, 'ehsSpeechAndDebate', 'authorizedUsers'); // Change this to your Firestore collection name
+      const docRef = doc(db, 'PressureBros', 'authorizedUsers'); // Change this to your Firestore collection name
       const docSnap = await getDoc(docRef);
       if (docSnap.exists()) {
         const data = docSnap.data();
-        return data.admin || [];
+        return data.admin ?? [];
       }
       return []; // Default to empty array if no data exists
     };
@@ -44,7 +46,7 @@ export function EmailManagementDialog({ isOpen, setIsOpen }: EmailManagementDial
 
   const addEmail = async () => {
     if (emailInput && !emails.includes(emailInput)) {
-      const docRef = doc(db, 'ehsSpeechAndDebate', 'authorizedUsers'); // Change this to your Firestore collection name
+      const docRef = doc(db, 'PressureBros', 'authorizedUsers'); // Change this to your Firestore collection name
       await updateDoc(docRef, {
         admin: arrayUnion(emailInput),
       });
@@ -54,7 +56,7 @@ export function EmailManagementDialog({ isOpen, setIsOpen }: EmailManagementDial
   };
 
   const removeEmail = async (email: string) => {
-    const docRef = doc(db, 'ehsSpeechAndDebate', 'authorizedUsers'); // Change this to your Firestore collection name
+    const docRef = doc(db, 'PressureBros', 'authorizedUsers'); // Change this to your Firestore collection name
     await updateDoc(docRef, {
       admin: arrayRemove(email),
     });

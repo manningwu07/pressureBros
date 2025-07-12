@@ -155,5 +155,5 @@ function createLabel(path: string) {
 function isImageField(fieldPath: string) {
   const pathParts = fieldPath.split(".");
   const lastPart = pathParts[pathParts.length - 1]!.toLowerCase();
-  return lastPart === "src" || lastPart === "imagesrc";
+  return lastPart.includes("src") || lastPart.includes("imagesrc");
 }
