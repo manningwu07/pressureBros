@@ -17,7 +17,7 @@ import {
 import type { PressureBrosData, Testimonial } from "~/types/types";
 import { usePullContent } from "~/utils/pageUtils";
 import { Skeleton } from "~/components/ui/skeleton";
-import jsonContent from "~/content.json"
+import jsonContent from "~/content.json";
 
 interface PageProps {
   adminContent: PressureBrosData | null;
@@ -34,7 +34,6 @@ const iconMap = {
   ArrowRight: <ArrowRight className="h-8 w-8 text-blue-400" />,
   MapPin: <MapPin className="w=8 h-8 text-blue-400" />,
 };
-
 
 const Homepage = ({ adminContent, adminError }: PageProps) => {
   const pullContent = usePullContent();
@@ -59,7 +58,6 @@ const Homepage = ({ adminContent, adminError }: PageProps) => {
 
   return (
     <div className="min-h-screen">
-        
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-gray-50 to-blue-50 py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -190,7 +188,7 @@ const Homepage = ({ adminContent, adminError }: PageProps) => {
               <Card className="overflow-hidden shadow-lg">
                 <CardContent className="p-0">
                   <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d403099.60970397794!2d-123.03007871093749!3d37.878637999999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa014a0ac1129f2b9%3A0xc9f1654a864e2ba8!2sBay%20Area%20Pressure%20Pros!5e0!3m2!1sen!2sus!4v1729050498049!5m2!1sen!2sus"
+                    src="https://maps.google.com/maps?width=100%25&height=450&hl=en&q=Dublin,%20CA+(Pressure%20Bros)&t=&z=14&ie=UTF8&iwloc=B&output=embed"
                     width="450"
                     height="450"
                     allowFullScreen={false}
@@ -222,10 +220,10 @@ const Homepage = ({ adminContent, adminError }: PageProps) => {
               </div>
             </div>
             <div className="rounded-lg bg-blue-400 p-8 text-white">
-              <h3 className="mb-4 text-2xl font-bold">{whyChooseUs.cta.title}</h3>
-              <p className="mb-6">
-                {whyChooseUs.cta.description} 
-              </p>
+              <h3 className="mb-4 text-2xl font-bold">
+                {whyChooseUs.cta.title}
+              </h3>
+              <p className="mb-6">{whyChooseUs.cta.description}</p>
               <Button
                 size="lg"
                 className="w-full bg-white text-blue-400 hover:bg-gray-100"
@@ -245,9 +243,7 @@ const Homepage = ({ adminContent, adminError }: PageProps) => {
             <h2 className="mb-4 text-4xl font-bold text-gray-800">
               {testimonials.title}
             </h2>
-            <p className="text-xl text-gray-600">
-              {testimonials.subtitle}
-            </p>
+            <p className="text-xl text-gray-600">{testimonials.subtitle}</p>
           </div>
 
           <div className="grid gap-8 md:grid-cols-3">
@@ -287,12 +283,8 @@ const Homepage = ({ adminContent, adminError }: PageProps) => {
       {/* Contact Section */}
       <section id="contact" className="bg-blue-400 py-20 text-white">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
-          <h2 className="mb-4 text-4xl font-bold">
-            {contact.title}
-          </h2>
-          <p className="mb-8 text-xl">
-            {contact.subtitle}
-          </p>
+          <h2 className="mb-4 text-4xl font-bold">{contact.title}</h2>
+          <p className="mb-8 text-xl">{contact.subtitle}</p>
           <div className="flex flex-col justify-center gap-4 sm:flex-row">
             <Button
               size="lg"

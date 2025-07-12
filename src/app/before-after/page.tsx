@@ -76,8 +76,8 @@ const BeforeAfterPage = ({ adminContent, adminError }: PageProps) => {
                 <Card className="overflow-hidden shadow-lg transition-shadow duration-300 hover:shadow-xl">
                   <div className="aspect-[4/3] overflow-hidden">
                     <ImageComparisonSlider
-                      beforeImage={item.before}
-                      afterImage={item.after}
+                      beforeImage={item.before_src}
+                      afterImage={item.after_src}
                       beforeLabel="Before"
                       afterLabel="After"
                     />

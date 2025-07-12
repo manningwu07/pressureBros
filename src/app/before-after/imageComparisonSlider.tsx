@@ -72,6 +72,10 @@ const ImageComparisonSlider = ({
     setSliderPosition(percentage);
   };
 
+  if (!beforeImage || !afterImage) {
+    return null;
+  }
+
   return (
     <div
       ref={containerRef}

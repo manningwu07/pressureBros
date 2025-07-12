@@ -18,7 +18,7 @@ const config = {
     defaultLocale: "en",
   },
   images: {
-    domains: ['res.cloudinary.com'], 
+    domains: ['res.cloudinary.com', 'google.com', 'maps.google.com', 'googleusercontent.com'],
   },
   transpilePackages: ["geist"],
 };
